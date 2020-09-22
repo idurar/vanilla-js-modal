@@ -1,4 +1,4 @@
-## Welcome to GitHub Pages
+## This Module is under developement
 
 You can use the [editor on GitHub](https://github.com/idurar/vanilla-js-modal/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
 
