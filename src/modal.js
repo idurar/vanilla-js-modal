@@ -1,5 +1,5 @@
 
-import delegate from '../lib/delegate'
+// import delegate from '../lib/delegate'
 
 
 
@@ -40,15 +40,15 @@ const outsideClickHandler = function () {
 
 const closeClickHandler = function () {
     
-  delegate(document.body, '.modal-content .closeModal', 'click', function(e) {
-    console.log(e.delegateTarget);
-    closeModal();
-    // const btnClose = e.delegateTarget;
-    //   btnClose.addEventListener("click", function () { 
-    //     console.log(btnClose)
-    //     close(); 
-    //   }, false);
-  }, false);
+  // delegate(document.body, '.modal-content .closeModal', 'click', function(e) {
+  //   console.log(e.delegateTarget);
+  //   closeModal();
+  //   // const btnClose = e.delegateTarget;
+  //   //   btnClose.addEventListener("click", function () { 
+  //   //     console.log(btnClose)
+  //   //     close(); 
+  //   //   }, false);
+  // }, false);
 
 
 }
@@ -86,6 +86,6 @@ const modal =  {
     }
 
 }
-  
-export default modal;
+// for webpack es6 use uncomment this line  
+// export default modal;
   
