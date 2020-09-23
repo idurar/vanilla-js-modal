@@ -58,9 +58,8 @@ const modal =  {
         vanillaModal.querySelector(".modal-content").appendChild(currentModalContent);
         vanillaModal.classList.add("modal-visible");
         console.log("modal Opened");
-        setInterval(() => {
-          outsideClickHandler()
-        }, 300);
+        
+        outsideClickHandler()
         closeClickHandler();  
       }
     },
