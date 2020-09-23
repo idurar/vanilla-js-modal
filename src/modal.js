@@ -1,7 +1,4 @@
 
-// import delegate from '../lib/delegate'
-
-
 
 const closeModal = function () {
   const vanillaModal = document.querySelector('.vanilla-modal');
@@ -31,30 +28,30 @@ const outsideClickHandler = function () {
           }  
         },true);
       
-      // document.removeEventListener('click',  function () {}, false);  
-      // else{
-      //   
-      // }
+     
 }
 
 
 const closeClickHandler = function () {
     
-  // delegate(document.body, '.modal-content .closeModal', 'click', function(e) {
-  //   console.log(e.delegateTarget);
-  //   closeModal();
-  //   // const btnClose = e.delegateTarget;
-  //   //   btnClose.addEventListener("click", function () { 
-  //   //     console.log(btnClose)
-  //   //     close(); 
-  //   //   }, false);
-  // }, false);
+  document.getElementById('modal-content')
+  .addEventListener('click', event => { // Step 2
+    console.log(event.target)
+    if (event.target.classList.contains('closeModal')) { // Step 3
+      console.log('event delegate Clicked!');
+      closeModal();
+    }
+    else {
+      return;
+     
+    }
+  }, false);
 
 
 }
 
 const modal =  {
-    //console.log(component);
+    
     
     open : function (idContent,filter=["default"]) {
       
