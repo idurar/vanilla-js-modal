@@ -1,8 +1,5 @@
-.modal {
-    display: none;
-}
 
-.vanilla-modal .modal{
+ .modal{
     display: block;
     position: fixed;
     content: "";
@@ -21,14 +18,14 @@
     -webkit-overflow-scrolling: touch;
 }
 
-.vanilla-modal .modal > * {
+ .modal > * {
     display: inline-block;
     white-space: normal;
     vertical-align: middle;
     text-align: left;
 }
 
-.vanilla-modal .modal:before {
+ .modal:before {
     display: inline-block;
     overflow: hidden;
     width: 0;
@@ -37,7 +34,7 @@
     content: "";
 }
 
-.vanilla-modal.modal-visible .modal {
+.modal-visible .modal {
     z-index: 9999;
     opacity: 1;
     transition: opacity 0.2s;
