@@ -17,7 +17,6 @@ const outsideClickHandler = function () {
           }
           const modalVisible = document.querySelector('.modal-visible');
           if (modalVisible){
-            console.log("outsideClickHandler");
             closeModal();
           }  
         },true);
@@ -29,9 +28,7 @@ const closeClickHandler = function () {
     
   document.getElementById('modal-content')
   .addEventListener('click', event => { // Step 2
-    console.log(event.target)
     if (event.target.classList.contains('closeModal')) { // Step 3
-      console.log('event delegate Clicked!');
       closeModal();
     }
     else {
@@ -50,14 +47,12 @@ const modal =  {
       if(vanillaModal){
         
         const content= document.getElementById(idContent);
-        console.log(content);
         
         let currentModalContent= content.cloneNode(true);
         currentModalContent.classList.add("current-modal");
         currentModalContent.style="";
         vanillaModal.querySelector(".modal-content").appendChild(currentModalContent);
         vanillaModal.classList.add("modal-visible");
-        console.log("modal Opened");
         
         outsideClickHandler()
         closeClickHandler();  
