@@ -5,17 +5,11 @@ const closeModal = function () {
   if(vanillaModal){
     vanillaModal.classList.remove("modal-visible")
     vanillaModal.querySelector(".modal-content").innerHTML="";
-    
-    // if (filter.includes('default')) {
-  
-    // }
   }
 }
 
 const outsideClickHandler = function () {
  
-      
-        
         document.addEventListener("click", function (event) {
         
           if (event.target.closest('.modal-inner')){
@@ -27,8 +21,7 @@ const outsideClickHandler = function () {
             closeModal();
           }  
         },true);
-      
-     
+   
 }
 
 
@@ -46,8 +39,6 @@ const closeClickHandler = function () {
      
     }
   }, false);
-
-
 }
 
 const modal =  {
@@ -70,11 +61,8 @@ const modal =  {
         setInterval(() => {
           outsideClickHandler()
         }, 300);
-        closeClickHandler();
-        
+        closeClickHandler();  
       }
-      
-
     },
    
    
