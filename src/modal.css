@@ -12,8 +12,6 @@
     opacity: 0;
     transition: opacity 0.2s, z-index 0s 0.2s;
     text-align: center;
-    overflow: hidden;
-    overflow-y: auto;
     white-space: nowrap;
     -webkit-overflow-scrolling: touch;
 }
@@ -45,8 +43,6 @@
     overflow: hidden;
     max-width: 90%;
     max-height: 90%;
-    overflow-x: hidden;
-    overflow-y: auto;
     background: #fff;
     z-index: -1;
     opacity: 0;
@@ -65,5 +61,3 @@
 #modal-content{
     padding: 50px 70px;
 }
-
-
