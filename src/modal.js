@@ -32,7 +32,7 @@ const closeModal = function () {
 
   document.removeEventListener("keydown", escKey);
   document.removeEventListener("click", outsideClick,true);
-  document.removeEventListener('click',closeClick, false);
+  document.removeEventListener('click',closeClick);
 }
 
 
@@ -75,7 +75,7 @@ const modal =  {
       
       document.addEventListener("click", outsideClick,true);   
       document.addEventListener("keydown",escKey);
-      document.getElementById('modal-content').addEventListener('click',closeClick, false);       
+      document.getElementById('modal-content').addEventListener('click',closeClick);       
         
     },  
    
