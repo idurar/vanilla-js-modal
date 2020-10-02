@@ -18,8 +18,6 @@ function closeClick(e) {
   if (e.target.classList.contains('closeModal')) {
     closeModal();
   }
-  else return; 
-
 }
 
 const closeModal = function () {
@@ -35,11 +33,9 @@ const closeModal = function () {
   document.removeEventListener('click',closeClick);
 }
 
-
 const modal =  {
 
     init : function () {
-      // console.log("init function executed")
       const prerendredModal = document.createElement("div");
       prerendredModal.classList.add('vanilla-modal')
       const htmlModal=`         
@@ -72,7 +68,6 @@ const modal =  {
         }
       }
       vanillaModal.classList.add("modal-visible");
-      
       document.addEventListener("click", outsideClick,true);   
       document.addEventListener("keydown",escKey);
       document.getElementById('modal-content').addEventListener('click',closeClick);       
@@ -82,13 +77,8 @@ const modal =  {
     close : function () {
       closeModal();
     }
-
 }
-  
-export default modal;
-  
 
-
-// for webpack es6 use uncomment this line  
+// for webpack es6 use uncomment the next line  
 // export default modal;
   
