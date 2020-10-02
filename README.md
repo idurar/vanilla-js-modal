@@ -1,6 +1,6 @@
 # Lightweight vanilla js modal component
 
-This is just 2kb Lightweight vanilla js modal component , with option esc close , outside click close , custom height , widht
+This is just 2kb Lightweight vanilla js modal component with zero dependencies , with option esc close , outside click close , custom height , widht
 
 
 ```markdown
