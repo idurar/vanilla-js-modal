@@ -1,37 +1,29 @@
-## This Module is under developement
+# Lightweight vanilla js modal component
 
-You can use the [editor on GitHub](https://github.com/idurar/vanilla-js-modal/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+This is just 2kb Lightweight vanilla js modal component , with option esc close , outside click close , custom height , widht
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
-
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
 
 ```markdown
-Syntax highlighted code block
 
-# Header 1
-## Header 2
-### Header 3
+### javascript code to open Modal 
 
-- Bulleted
-- List
+modal.open('delete-record'); // to open Modal with wanted html content
 
-1. Numbered
-2. List
+modal.close(); // to close Modal
 
-**Bold** and _Italic_ and `Code` text
+### HTML code to insert in Modal 
 
-[Link](url) and ![Image](src)
+<div id="delete-record" style="display:none"><div class="popup-container"><div class="content-row popup-row"><div class="pop-up-text"> Êtes-vous sûr de vouloir supprimer <span class="row-info"> : Delia</span>?</div></div><div class="space-15"></div>
+  <div class="content-row">
+    <div class="col-12 alpha">
+  <button class="btn primary-btn slim-btn icon-btn danger delete-confirm" type="button" data-delete-url="">Supprimer</button>
+    </div>
+    <div class="col-12 omega">
+      <button class="btn secondary-btn slim-btn icon-btn closeModal" type="button">Annuler</button>
+    </div>
+  </div>
+  </div>
+</div>
+
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/idurar/vanilla-js-modal/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
