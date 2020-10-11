@@ -2,6 +2,7 @@
 
 This is just 2kb Lightweight vanilla js modal component with zero dependencies , with option esc close , outside click close , custom height , widht
 
+check demo here : https://idurar.github.io/vanilla-js-modal/
 
 ```markdown
 
@@ -9,7 +10,7 @@ This is just 2kb Lightweight vanilla js modal component with zero dependencies ,
 
 modal.open('idContent'); // to open Modal with wanted html content
 
-modal.close(); // to close Modal
+// modal.close(); // to close Modal
 
 ### HTML code to insert in Modal 
 
