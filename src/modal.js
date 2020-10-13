@@ -18,8 +18,54 @@ function closeClick(e) {
     closeModal();
   }
 }
+function trapTabKey(e) {
+  const vanillaModal = document.querySelector(".vanilla-modal");
+  const FOCUSABLE_ELEMENTS = [
+    "a[href]",
+    "area[href]",
+    'input:not([disabled]):not([type="hidden"]):not([aria-hidden])',
+    "select:not([disabled]):not([aria-hidden])",
+    "textarea:not([disabled]):not([aria-hidden])",
+    "button:not([disabled]):not([aria-hidden])",
+    "iframe",
+    "object",
+    "embed",
+    "[contenteditable]",
+    '[tabindex]:not([tabindex^="-"])',
+  ];
 
-const closeModal = function () {
+  const nodes = vanillaModal.querySelectorAll(FOCUSABLE_ELEMENTS);
+  let focusableNodes = Array(...nodes);
+
+  if (focusableNodes.length === 0) return;
+
+  focusableNodes = focusableNodes.filter((node) => {
+    return node.offsetParent !== null;
+  });
+
+  // if disableFocus is true
+  if (!vanillaModal.contains(document.activeElement)) {
+    focusableNodes[0].focus();
+  } else {
+    const focusedItemIndex = focusableNodes.indexOf(document.activeElement);
+
+    if (e.shiftKey && focusedItemIndex === 0) {
+      focusableNodes[focusableNodes.length - 1].focus();
+      e.preventDefault();
+    }
+
+    if (
+      !e.shiftKey &&
+      focusableNodes.length > 0 &&
+      focusedItemIndex === focusableNodes.length - 1
+    ) {
+      focusableNodes[0].focus();
+      e.preventDefault();
+    }
+  }
+}
+
+function closeModal() {
   const vanillaModal = document.querySelector(".vanilla-modal");
   if (vanillaModal) {
     vanillaModal.classList.remove("modal-visible");
@@ -30,7 +76,8 @@ const closeModal = function () {
   document.removeEventListener("keydown", escKey);
   document.removeEventListener("click", outsideClick, true);
   document.removeEventListener("click", closeClick);
-};
+  document.removeEventListener("keydown", trapTabKey);
+}
 
 const modal = {
   init: function () {
@@ -66,6 +113,7 @@ const modal = {
     vanillaModal.classList.add("modal-visible");
     document.addEventListener("click", outsideClick, true);
     document.addEventListener("keydown", escKey);
+    document.addEventListener("keydown", trapTabKey);
     document
       .getElementById("modal-content")
       .addEventListener("click", closeClick);
